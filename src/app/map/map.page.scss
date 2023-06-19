@@ -12,3 +12,10 @@ ion-fab {
   bottom: 20px;
   right: 20px;
 }
+
+ion-fab-button {
+  --background: var(--ion-color-dark-green);
+  --background-activated: var(--ion-color-dark-green);
+  --background-hover: var(--ion-color-dark-green);
+  --border-radius: 40px;
+}
