@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Map </ion-title>
+    <ion-title>Map</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,5 +11,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Map"></app-explore-container>
+  <div class="map-container full-size">
+    <div id="mapbox" class="full-size"></div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="flyToLocation()" color="primary">
+        <ion-icon name="navigate"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>
