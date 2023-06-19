@@ -13,7 +13,9 @@ ion-tab-bar {
   --padding-bottom: env(safe-area-inset-bottom);
 }
 
-ion-tab-button {
+ion-tab-button[tab="favorites"],
+ion-tab-button[tab="map"],
+ion-tab-button[tab="settings"] {
   --ion-color-primary: #467e3d; /* Color de los botones no seleccionados */
   --ion-color-primary-contrast: #ffffff; /* Color del texto e iconos en los botones no seleccionados */
   --ion-color-primary-shade: #3d6e37; /* Color más oscuro de los botones al interactuar con ellos */
