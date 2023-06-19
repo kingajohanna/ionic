@@ -3,7 +3,7 @@ ion-tab-bar {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 70px;
-  
+
   --background: var(--ion-color-bottom-top-bar);
   --border-color: var(--ion-color-bottom-top-bar);
   --border-width: 0.5px;
@@ -11,4 +11,9 @@ ion-tab-bar {
   --border-top-left-radius: 30px;
   --border-top-right-radius: 30px;
   --padding-bottom: env(safe-area-inset-bottom);
+}
+
+ion-tab-button {
+  --color: var(--ion-color-green);
+  --color-selected: var(--ion-color-neon-green);
 }

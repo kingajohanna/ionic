@@ -1,0 +1,253 @@
+{
+  "name": "1",
+  "stops": [
+    {
+      "point": {
+        "longitude": 13.40117,
+        "latitude": 42.34454
+      },
+      "name": "Terminalbus",
+      "times": ["06:30", "23:30", "12:20", "23:30", "12:20", "23:30"]
+    },
+    {
+      "point": {
+        "longitude": 13.41083,
+        "latitude": 42.34608
+      },
+      "name": "Via della Crocetta (lato edicola)",
+      "times": ["06:40", "23:41", "12:31", "23:41", "12:31", "23:41"]
+    },
+    {
+      "point": {
+        "longitude": 13.41162,
+        "latitude": 42.35191
+      },
+      "name": "Piazzale Cencioni stadio gran sasso A ",
+      "times": ["06:51", "23:52", "12:42", "23:52", "12:42", "23:52"]
+    },
+    {
+      "point": {
+        "longitude": 13.40742,
+        "latitude": 42.35519
+      },
+      "name": "Via Panella (lato caserma)",
+      "times": ["07:02", "00:03", "12:53", "00:03", "12:53", "00:03"]
+    },
+    {
+      "point": {
+        "longitude": 13.40493,
+        "latitude": 42.35572
+      },
+      "name": "Viale gran sasso (lato Stadio Fattori)",
+      "times": ["07:13", "00:14", "13:04", "00:14", "13:04", "00:14"]
+    },
+    {
+      "point": {
+        "longitude": 13.40281,
+        "latitude": 42.35506
+      },
+      "name": "Viale gran sasso (Fontana luminosa)",
+      "times": ["07:35", "00:36", "13:26", "00:36", "13:26", "00:36"]
+    },
+    {
+      "point": {
+        "longitude": 13.40389,
+        "latitude": 42.35534
+      },
+      "name": "Viale gran sasso lato castello",
+      "times": ["07:46", "00:47", "13:37", "00:47", "13:37", "00:47"]
+    },
+    {
+      "point": {
+        "longitude": 13.40387,
+        "latitude": 42.35753
+      },
+      "name": "Viale Croce Rossa bivio Via Moscardelli",
+      "times": ["07:57", "00:58", "13:48", "00:58", "13:48", "00:58"]
+    },
+    {
+      "point": {
+        "longitude": 13.39877,
+        "latitude": 42.35703
+      },
+      "name": "Viale Croce Rossa bivio Monte Camicia ",
+      "times": ["08:08", "01:09", "13:59", "01:09", "13:59", "01:09"]
+    },
+    {
+      "point": {
+        "longitude": 13.39505,
+        "latitude": 42.3567
+      },
+      "name": "Viale Croce Rossa bivio valle Pretara",
+      "times": ["08:19", "01:20", "14:10", "01:20", "14:10", "01:20"]
+    },
+    {
+      "point": {
+        "longitude": 13.39041,
+        "latitude": 42.35704
+      },
+      "name": "Viale Croce Rossa bivio Via San Sisto",
+      "times": ["08:30", "01:31", "14:21", "01:31", "14:21", "01:31"]
+    },
+    {
+      "point": {
+        "longitude": 13.38645,
+        "latitude": 42.35836
+      },
+      "name": "Via Betao Cesidio Santanza",
+      "times": ["08:41", "01:42", "14:32", "01:42", "14:32", "01:42"]
+    },
+    {
+      "point": {
+        "longitude": 13.38693,
+        "latitude": 42.36117
+      },
+      "name": "Via Betao Piazza Italia",
+      "times": ["08:52", "01:53", "14:43", "01:53", "14:43", "01:53"]
+    },
+    {
+      "point": {
+        "longitude": 13.38534,
+        "latitude": 42.36254
+      },
+      "name": "Via Paolucci San Barabara piazza Ayala",
+      "times": ["09:03", "02:04", "14:54", "02:04", "14:54", "02:04"]
+    },
+    {
+      "point": {
+        "longitude": 13.38254,
+        "latitude": 42.36406
+      },
+      "name": "Via Amiternum incr. Piccini fronte bar Via Betao Piazza Italia",
+      "times": ["09:14", "02:15", "15:05", "02:15", "15:05", "02:15"]
+    },
+    {
+      "point": {
+        "longitude": 13.37855,
+        "latitude": 42.36547
+      },
+      "name": "Via Amiternum lato via milonia",
+      "times": ["09:25", "02:26", "15:16", "02:26", "15:16", "02:26"]
+    },
+    {
+      "point": {
+        "longitude": 13.37464,
+        "latitude": 42.36629
+      },
+      "name": "Via da vinci fronte regione abruzzo",
+      "times": ["09:36", "02:37", "15:27", "02:37", "15:27", "02:37"]
+    },
+    {
+      "point": {
+        "longitude": 13.3714,
+        "latitude": 42.36608
+      },
+      "name": "Via da vinci lato cinema fronte scuola",
+      "times": ["09:47", "02:48", "15:38", "02:48", "15:38", "02:48"]
+    },
+    {
+      "point": {
+        "longitude": 13.36948,
+        "latitude": 42.36577
+      },
+      "name": "Via da vinci A24 fronte via carducci",
+      "times": ["09:58", "02:59", "15:49", "02:59", "15:49", "02:59"]
+    },
+    {
+      "point": {
+        "longitude": 13.36584,
+        "latitude": 42.36703
+      },
+      "name": "Via comunita europea lato via australia",
+      "times": ["10:09", "03:10", "16:00", "03:10", "16:00", "03:10"]
+    },
+    {
+      "point": {
+        "longitude": 13.36199,
+        "latitude": 42.36923
+      },
+      "name": "Via comunita europea lato via stati uniti",
+      "times": ["10:20", "03:21", "16:11", "03:21", "16:11", "03:21"]
+    },
+    {
+      "point": {
+        "longitude": 13.35854,
+        "latitude": 42.36968
+      },
+      "name": "Via Manzoni fronte via madonna della grazie",
+      "times": ["10:31", "03:32", "16:22", "03:32", "16:22", "03:32"]
+    },
+    {
+      "point": {
+        "longitude": 13.35244,
+        "latitude": 42.36782
+      },
+      "name": "Universita lato universita",
+      "times": ["10:42", "03:43", "16:33", "03:43", "16:33", "03:43"]
+    },
+    {
+      "point": {
+        "longitude": 13.34787,
+        "latitude": 42.3677
+      },
+      "name": "Via Vetoio fronte via Morgagni",
+      "times": ["10:53", "03:54", "16:44", "03:54", "16:44", "03:54"]
+    },
+    {
+      "point": {
+        "longitude": 13.34577,
+        "latitude": 42.3663
+      },
+      "name": "Via Borsellino lato via sotto la chiesa",
+      "times": ["11:04", "04:05", "16:55", "04:05", "16:55", "04:05"]
+    },
+    {
+      "point": {
+        "longitude": 13.34736,
+        "latitude": 42.36459
+      },
+      "name": "Via Falcone lato via delle svolte SP33",
+      "times": ["11:15", "04:16", "17:06", "04:16", "17:06", "04:16"]
+    },
+    {
+      "point": {
+        "longitude": 13.35073,
+        "latitude": 42.36256
+      },
+      "name": "Via Falcone fermata lato Ovest SP33",
+      "times": ["11:37", "04:38", "17:28", "04:38", "17:28", "04:38"]
+    },
+    {
+      "point": {
+        "longitude": 13.35171,
+        "latitude": 42.36036
+      },
+      "name": "Via Falcone lato Reiss Romoli SP33",
+      "times": ["11:48", "04:49", "17:39", "04:49", "17:39", "04:49"]
+    },
+    {
+      "point": {
+        "longitude": 13.35134,
+        "latitude": 42.35845
+      },
+      "name": "SS17 Deposito Ama Spa fronte Ama",
+      "times": ["06:30", "05:00", "17:50", "05:00", "17:50", "05:00"]
+    },
+    {
+      "point": {
+        "longitude": 13.34895,
+        "latitude": 42.35207
+      },
+      "name": "Confindustria Via Campo di Pile",
+      "times": ["06:40", "05:11", "17:59", "05:11", "17:59", "05:11"]
+    },
+    {
+      "point": {
+        "longitude": 13.34764,
+        "latitude": 42.34968
+      },
+      "name": "L'Aquilone",
+      "times": ["06:51", "05:22", "18:10", "05:22", "18:10", "05:22"]
+    }
+  ]
+}
