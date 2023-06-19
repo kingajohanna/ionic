@@ -1,4 +1,9 @@
 ion-tab-bar {
+  background-color: #467e3d;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 70px;
+  
   --background: var(--ion-color-bottom-top-bar);
   --border-color: var(--ion-color-bottom-top-bar);
   --border-width: 0.5px;
@@ -6,4 +11,12 @@ ion-tab-bar {
   --border-top-left-radius: 30px;
   --border-top-right-radius: 30px;
   --padding-bottom: env(safe-area-inset-bottom);
+}
+
+ion-tab-button {
+  --ion-color-primary: #467e3d; /* Color de los botones no seleccionados */
+  --ion-color-primary-contrast: #ffffff; /* Color del texto e iconos en los botones no seleccionados */
+  --ion-color-primary-shade: #3d6e37; /* Color más oscuro de los botones al interactuar con ellos */
+  --ion-color-secondary: #ff0000; /* Color de los botones seleccionados */
+  --ion-color-secondary-contrast: #ffffff; /* Color del texto e iconos en los botones seleccionados */
 }
