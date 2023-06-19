@@ -3,14 +3,12 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  selector: 'app-favorites',
+  templateUrl: 'favorites.page.html',
+  styleUrls: ['favorites.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent]
+  imports: [IonicModule, ExploreContainerComponent],
 })
-export class Tab2Page {
-
+export class favoritesPage {
   constructor() {}
-
 }

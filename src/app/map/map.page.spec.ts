@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Tab3Page } from './tab3.page';
+import { mapPage } from './map.page';
 
-describe('Tab3Page', () => {
-  let component: Tab3Page;
-  let fixture: ComponentFixture<Tab3Page>;
+describe('mapPage', () => {
+  let component: mapPage;
+  let fixture: ComponentFixture<mapPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Tab3Page],
+      imports: [mapPage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tab3Page);
+    fixture = TestBed.createComponent(mapPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

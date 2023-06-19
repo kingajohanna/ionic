@@ -1,1 +1,9 @@
-
+ion-tab-bar {
+  --background: var(--ion-color-bottom-top-bar);
+  --border-color: var(--ion-color-bottom-top-bar);
+  --border-width: 0.5px;
+  --border-bottom-width: 1px;
+  --border-top-left-radius: 30px;
+  --border-top-right-radius: 30px;
+  --padding-bottom: env(safe-area-inset-bottom);
+}
