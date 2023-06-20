@@ -7,7 +7,10 @@ import { Stop } from '../types/stop';
   providedIn: 'root',
 })
 export class FavoriteServiceService {
-  private favoriteStops = new BehaviorSubject<Stop[]>(busRoutes[0].stops); // this does still not work because I am not sure about the types
+  private favoriteStops = new BehaviorSubject<Stop[]>([
+    busRoutes[0].stops[0],
+    busRoutes[0].stops[1],
+  ]); // this does still not work because I am not sure about the types
   currentFavoritesStops = this.favoriteStops.asObservable();
 
   constructor() {}
@@ -17,21 +20,30 @@ export class FavoriteServiceService {
   }
 
   addOneStop(newFavoriteStop: Stop) {
-    const temp = [...this.favoriteStops.value, newFavoriteStop] //... operator is used for merging fields and values of objects, second object has precedence
-    console.log(temp)
+    const temp = [...this.favoriteStops.value, newFavoriteStop]; //... operator is used for merging fields and values of objects, second object has precedence
+
     this.favoriteStops.next(temp);
   }
 
   deleteOneStop(favoriteStopToBeDeleted: Stop) {
-    const temp = this.favoriteStops.value.filter(stop => stop.name !== favoriteStopToBeDeleted.name)
-    console.log(temp)
+    const temp = this.favoriteStops.value.filter(
+      (stop) => stop.name !== favoriteStopToBeDeleted.name
+    );
     this.favoriteStops.next(temp);
   }
 
-  deleteAllStops() {    
+  deleteAllStops() {
     this.favoriteStops.next([]);
   }
 
+  isFavorite(stopFav: Stop) {
+    const temp = this.favoriteStops.value.filter((stop) => {
+      console.log(stop.name === stopFav.name, stop.name, stopFav.name);
 
+      stop.name === stopFav.name;
+    });
+    console.log('**', temp.length);
 
+    return temp.length;
+  }
 }

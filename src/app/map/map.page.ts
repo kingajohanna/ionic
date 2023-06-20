@@ -182,8 +182,11 @@ export class mapPage implements AfterViewInit, OnInit {
   }
 
   addMarker(stop: Stop, icon: string): void {
-    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-      `<ion-label>
+    const isFav = this.favoriteService.isFavorite(stop);
+
+    let code;
+    if (isFav)
+      code = `<ion-label>
         <h2>${stop.name}</h2>
         <p>Times</p>
         <p>${stop.times.join(', ')}</p>
@@ -191,11 +194,19 @@ export class mapPage implements AfterViewInit, OnInit {
       <ion-button color="white">
         <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon>
       </ion-button>
-      <ion-button color="white">
+      `;
+    else
+      code = `<ion-label>
+        <h2>${stop.name}</h2>
+        <p>Times</p>
+        <p>${stop.times.join(', ')}</p>
+      </ion-label>
+      <ion-button color="danger">
         <ion-icon slot="icon-only" name="heart" color="white"></ion-icon>
       </ion-button>
-      `
-    );
+      `;
+
+    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(code);
 
     var el = document.createElement('div');
     el.className = 'marker';
