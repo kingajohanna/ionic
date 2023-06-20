@@ -1,0 +1,13 @@
+ion-toolbar {
+  background-color: var(--ion-color-bottom-top-bar);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 70px;
+  --background: var(--ion-color-bottom-top-bar);
+  --border-color: var(--ion-color-bottom-top-bar);
+  --border-width: 0.5px;
+  --border-bottom-width: 1px;
+  --border-bottom-left-radius: 30px;
+  --border-bottom-right-radius: 30px;
+  --padding-bottom: env(safe-area-inset-bottom);
+}
