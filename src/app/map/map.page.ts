@@ -191,7 +191,7 @@ export class mapPage implements AfterViewInit, OnInit {
         <p>Times</p>
         <p>${stop.times.join(', ')}</p>
       </ion-label>
-      <ion-button color="white">
+      <ion-button color="light">
         <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon>
       </ion-button>
       `;
@@ -201,8 +201,8 @@ export class mapPage implements AfterViewInit, OnInit {
         <p>Times</p>
         <p>${stop.times.join(', ')}</p>
       </ion-label>
-      <ion-button color="danger">
-        <ion-icon slot="icon-only" name="heart" color="white"></ion-icon>
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="heart" color="white-design"></ion-icon>
       </ion-button>
       `;
 

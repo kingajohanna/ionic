@@ -38,3 +38,13 @@ ion-fab-button {
   background-color: transparent;
   z-index: 2;
 }
+
+.fav-class {
+  --color: var(--ion-color-red-design);
+  --background: var(--ion-color-white-design)
+}
+
+.not-fav-class {
+  --color: var(--ion-color-yellow-design);
+  --background: var(--ion-color-white-design)
+}
