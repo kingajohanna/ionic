@@ -15,4 +15,23 @@ export class FavoriteServiceService {
   changeStops(newFavoriteStops: Stop[]) {
     this.favoriteStops.next(newFavoriteStops);
   }
+
+  addOneStop(newFavoriteStop: Stop) {
+    const temp = [...this.favoriteStops.value, newFavoriteStop] //... operator is used for merging fields and values of objects, second object has precedence
+    console.log(temp)
+    this.favoriteStops.next(temp);
+  }
+
+  deleteOneStop(favoriteStopToBeDeleted: Stop) {
+    const temp = this.favoriteStops.value.filter(stop => stop.name !== favoriteStopToBeDeleted.name)
+    console.log(temp)
+    this.favoriteStops.next(temp);
+  }
+
+  deleteAllStops() {    
+    this.favoriteStops.next([]);
+  }
+
+
+
 }
