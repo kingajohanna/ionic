@@ -80,36 +80,9 @@ export class mapPage implements AfterViewInit, OnInit {
     });
 
     this.route$.subscribe((route) => {
-      if (this.map.getLayer('beforebusLayer')) {
-        this.map.removeLayer('beforebusLayer');
-        this.map.removeSource('beforebus');
-      }
-
-      this.map.addSource('beforebus', {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: route.beforeBus,
-          },
-        },
-      });
-
-      this.map.addLayer({
-        id: 'beforebusLayer',
-        type: 'line',
-        source: 'beforebus',
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round',
-        },
-        paint: {
-          'line-color': '#888',
-          'line-width': 8,
-        },
-      });
+      this.generateRoutePlanning(route.beforeBus, 'beforeBus', '#92949c');
+      this.generateRoutePlanning(route.onBus, 'onBus', '#5260ff');
+      this.generateRoutePlanning(route.afterBus, 'afterBus', '#92949c');
     });
 
     const self = this;
@@ -170,6 +143,39 @@ export class mapPage implements AfterViewInit, OnInit {
         );
       })
     );
+  }
+
+  generateRoutePlanning(data: any[], id: string, color: string): void {
+    if (this.map.getLayer(id)) {
+      this.map.removeLayer(id);
+      this.map.removeSource(id);
+    }
+
+    this.map.addSource(id, {
+      type: 'geojson',
+      data: {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: data,
+        },
+      },
+    });
+
+    this.map.addLayer({
+      id: id,
+      type: 'line',
+      source: id,
+      layout: {
+        'line-join': 'round',
+        'line-cap': 'round',
+      },
+      paint: {
+        'line-color': color,
+        'line-width': 8,
+      },
+    });
   }
 
   /** 
