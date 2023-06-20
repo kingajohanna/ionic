@@ -1,0 +1,189 @@
+{
+  "name": "2",
+  "stops": [
+    {
+      "point": {
+        "longitude": 13.34766,
+        "latitude": 42.34966
+      },
+      "name": "L'Aquilone",
+      "times": ["07:00", "08:00", "14:00", "15:00", "20:30", "22:30"]
+    },
+    {
+      "point": {
+        "longitude": 13.3489,
+        "latitude": 42.35205
+      },
+      "name": "via campo di Pile lato Optimes",
+      "times": ["07:11", "08:12", "14:11", "15:12", "20:32", "22:44"]
+    },
+    {
+      "point": {
+        "longitude": 13.35167,
+        "latitude": 42.35844
+      },
+      "name": "SS17 Deposito Ama Spa lato Ama",
+      "times": ["07:24", "08:24", "14:22", "15:24", "20:43", "23:00"]
+    },
+    {
+      "point": {
+        "longitude": 13.35946,
+        "latitude": 42.35936
+      },
+      "name": "centi colella piazzale",
+      "times": ["07:37", "08:36", "14:33", "15:36", "20:56", "23:16"]
+    },
+    {
+      "point": {
+        "longitude": 13.36465,
+        "latitude": 42.35788
+      },
+      "name": "ITALTEL AQ/2A",
+      "times": ["07:48", "08:48", "14:44", "15:48", "21:09", "23:33"]
+    },
+    {
+      "point": {
+        "longitude": 13.36853,
+        "latitude": 42.35833
+      },
+      "name": "via mulino Pile lato Spaziani",
+      "times": ["08:00", "09:00", "14:55", "16:00", "21:22", "23:50"]
+    },
+    {
+      "point": {
+        "longitude": 13.36862,
+        "latitude": 42.35454
+      },
+      "name": "Variante Pile Via Farroni lato Pertini",
+      "times": ["08:13", "09:12", "15:05", "16:12", "21:35", "00:07"]
+    },
+    {
+      "point": {
+        "longitude": 13.36991,
+        "latitude": 42.35341
+      },
+      "name": "Mazzini fronte Variante Pile Via Farroni",
+      "times": ["08:24", "09:24", "15:17", "16:24", "21:48", "00:24"]
+    },
+    {
+      "point": {
+        "longitude": 13.37519,
+        "latitude": 42.35373
+      },
+      "name": "Variante Pile Via Farroni Fronte Carabba",
+      "times": ["08:37", "09:36", "15:28", "16:36", "22:03", "00:43"]
+    },
+    {
+      "point": {
+        "longitude": 13.38072,
+        "latitude": 42.35316
+      },
+      "name": "Via Pile Coan Dopo Rotonda",
+      "times": ["08:50", "09:48", "15:41", "16:48", "22:18", "01:04"]
+    },
+    {
+      "point": {
+        "longitude": 13.38413,
+        "latitude": 42.35217
+      },
+      "name": "Via Pile fronte Corte Appello",
+      "times": ["08:50", "09:48", "15:41", "16:48", "22:18", "01:04"]
+    },
+    {
+      "point": {
+        "longitude": 13.38499,
+        "latitude": 42.35143
+      },
+      "name": "Piazzale Stazione FS",
+      "times": ["09:03", "10:00", "15:52", "17:00", "22:33", "01:26"]
+    },
+    {
+      "point": {
+        "longitude": 13.38501,
+        "latitude": 42.35219
+      },
+      "name": "Viale XXV Aprile fronte Corte Appello",
+      "times": ["09:15", "10:12", "16:03", "17:12", "22:48", "01:50"]
+    },
+    {
+      "point": {
+        "longitude": 13.38686,
+        "latitude": 42.35451
+      },
+      "name": "Viale XXV Aprile fronte Via Carabba",
+      "times": ["09:28", "10:24", "16:17", "17:24", "23:05", "02:15"]
+    },
+    {
+      "point": {
+        "longitude": 13.38963,
+        "latitude": 42.35435
+      },
+      "name": "Via XX Settembre lato Tribunale",
+      "times": ["09:40", "10:36", "16:29", "17:36", "23:22", "02:42"]
+    },
+    {
+      "point": {
+        "longitude": 13.3904,
+        "latitude": 42.35255
+      },
+      "name": "Via XX Settembre lato Villa Gioia",
+      "times": ["09:53", "10:48", "16:43", "17:48", "23:39", "03:11"]
+    },
+    {
+      "point": {
+        "longitude": 13.39216,
+        "latitude": 42.35029
+      },
+      "name": "Via XX Settembre Fontesecco lato Rivera",
+      "times": ["09:53", "10:48", "16:43", "17:48", "23:39", "03:11"]
+    },
+    {
+      "point": {
+        "longitude": 13.39431,
+        "latitude": 42.34713
+      },
+      "name": "Via XX Settembre Lato via Sant'Andrea",
+      "times": ["10:06", "11:00", "16:54", "18:00", "23:56", "03:42"]
+    },
+    {
+      "point": {
+        "longitude": 13.39657,
+        "latitude": 42.34624
+      },
+      "name": "Via XX Settembre lato Parco della Memoria",
+      "times": ["10:18", "11:12", "17:07", "18:12", "00:15", "04:15"]
+    },
+    {
+      "point": {
+        "longitude": 13.39703,
+        "latitude": 42.34534
+      },
+      "name": "Viale Crispi lato Parco della Memoria",
+      "times": ["10:31", "11:24", "17:20", "18:24", "00:34", "04:50"]
+    },
+    {
+      "point": {
+        "longitude": 13.39812,
+        "latitude": 42.34404
+      },
+      "name": "Viale Colemaggio fronte Emiciclo Regione",
+      "times": ["10:44", "11:36", "17:33", "18:36", "00:53", "05:27"]
+    },
+    {
+      "point": {
+        "longitude": 13.40212,
+        "latitude": 42.34416
+      },
+      "name": "Viale Caldora lato Colemaggio",
+      "times": ["10:57", "11:48", "17:45", "18:48", "01:12", "06:06"]
+    },
+    {
+      "point": {
+        "longitude": 13.40111,
+        "latitude": 42.3445
+      },
+      "name": "Terminalbus",
+      "times": ["11:10", "12:00", "17:58", "19:00", "01:31", "06:47"]
+    }
+  ]
+}
