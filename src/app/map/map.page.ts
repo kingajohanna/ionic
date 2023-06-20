@@ -5,20 +5,17 @@ import {
   OnInit,
 } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { Point } from '../../types/point';
 import { BehaviorSubject } from 'rxjs';
 import { busRoutes } from '../../data/lines';
-
 import { Route } from '../../types/route';
 import { getRouteDirection } from '../../calculations/getRouteDirection';
-
+import { Stop } from '../../types/stop';
 import { FavoriteServiceService } from '../favorite-service.service';
 import { Subscription } from 'rxjs';
-import { Stop } from '../../types/stop';
 
 const latitudeThreshold = 0.0003;
 const longitudeThreshold = 0.0003;
@@ -30,16 +27,21 @@ const forteSpagnoloPos: Point = { longitude: 13.404768, latitude: 42.355627 };
   templateUrl: 'map.page.html',
   styleUrls: ['map.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent, CustomHeaderComponent],
+  imports: [IonicModule, CustomHeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class mapPage implements AfterViewInit, OnInit {
   map: mapboxgl.Map;
-  location$: BehaviorSubject<Point>;
-  destination$: BehaviorSubject<Point>;
   destinationMarker: mapboxgl.Marker;
   locationMarker: mapboxgl.Marker;
-  route$: BehaviorSubject<Route>;
+
+  location$ = new BehaviorSubject<Point>(forteSpagnoloPos);
+  destination$ = new BehaviorSubject(forteSpagnoloPos);
+  route$ = new BehaviorSubject({
+    beforeBus: [],
+    onBus: [],
+    afterBus: [],
+  } as Route);
 
   subscription: Subscription;
   favoriteStops = new BehaviorSubject<Stop[]>([]);
@@ -51,14 +53,6 @@ export class mapPage implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.location$ = new BehaviorSubject(forteSpagnoloPos);
-    this.destination$ = new BehaviorSubject(forteSpagnoloPos);
-    this.route$ = new BehaviorSubject({
-      beforeBus: [],
-      onBus: [],
-      afterBus: [],
-    } as Route);
-
     mapboxgl.accessToken = environment.mapbox.accessToken;
     this.map = new mapboxgl.Map({
       container: 'mapbox',
@@ -99,6 +93,8 @@ export class mapPage implements AfterViewInit, OnInit {
     const self = this;
 
     this.map.on('click', async function (e) {
+      console.log('***target', e.target);
+
       if (
         Math.abs(self.destination$.value.latitude - e.lngLat.lat) >
           latitudeThreshold ||
@@ -109,6 +105,11 @@ export class mapPage implements AfterViewInit, OnInit {
           longitude: e.lngLat.lng,
           latitude: e.lngLat.lat,
         });
+        self.route$.next({
+          beforeBus: [],
+          onBus: [],
+          afterBus: [],
+        } as Route);
       } else {
         const route = await getRouteDirection(
           self.location$.value,
@@ -149,7 +150,8 @@ export class mapPage implements AfterViewInit, OnInit {
     busRoutes.map((route) =>
       route.stops.map((stop) => {
         this.addMarker(
-          [stop.point.longitude, stop.point.latitude],
+          stop,
+
           'url(../../assets/busStation.png)'
         );
       })
@@ -189,18 +191,14 @@ export class mapPage implements AfterViewInit, OnInit {
     });
   }
 
-  /** 
-          let markers: any[] = [];
-    busRoutes.map((route) => {
-      const stops = route.stops.map((stop) => ({
-        stop,
-      }));
-      markers = [...markers, ...stops];
-    });
-    this.busMarkers = markers;
-        ); */
+  addMarker(stop: Stop, icon: string): void {
+    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+      `<ion-label>
+        <h2>${stop.name}</h2>
+        <p>Times: ${stop.times.join(', ')}</p>
+      </ion-label>`
+    );
 
-  addMarker(point: mapboxgl.LngLatLike, icon: string): void {
     var el = document.createElement('div');
     el.className = 'marker';
     el.style.backgroundImage = icon;
@@ -208,6 +206,9 @@ export class mapPage implements AfterViewInit, OnInit {
     el.style.height = '20px';
     el.style.backgroundSize = 'cover';
 
-    new mapboxgl.Marker(el).setLngLat(point).addTo(this.map!);
+    new mapboxgl.Marker(el)
+      .setLngLat([stop.point.longitude, stop.point.latitude])
+      .setPopup(popup)
+      .addTo(this.map!);
   }
 }
