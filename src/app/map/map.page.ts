@@ -4,11 +4,8 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import {
-  InputChangeEventDetail,
-  IonicModule,
-  PopoverController,
-} from '@ionic/angular';
+import { IonicModule, PopoverController } from '@ionic/angular';
+import { Geolocation } from '@capacitor/geolocation';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
@@ -99,6 +96,7 @@ export class mapPage implements AfterViewInit, OnInit {
           .setLngLat([location.longitude, location.latitude])
           .addTo(this.map);
       }
+      this.flyToLocation(location);
     });
 
     this.route$.subscribe((route) => {
@@ -137,10 +135,21 @@ export class mapPage implements AfterViewInit, OnInit {
     });
   }
 
+  getCurrentLocation = async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
+
+    this.location$.next({
+      latitude: coordinates.coords.latitude,
+      longitude: coordinates.coords.longitude,
+    });
+    console.log('Current position:', coordinates);
+  };
+
   ngAfterViewInit() {
     setTimeout(() => {
       this.map.resize();
       this.generateMarkers();
+      this.getCurrentLocation();
     }, 0);
   }
 
