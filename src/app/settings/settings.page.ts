@@ -25,6 +25,7 @@ export class settingsPage {
 
   deleteFavs() {
     console.log('delete Favorites was clicked');
+    this.favoriteService.deleteAllStops()
     //here write your code navigate,event whatever you want
   }
 }
