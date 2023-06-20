@@ -1,5 +1,6 @@
 ion-toolbar {
   background-color: var(--ion-color-bottom-top-bar);
+
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   height: 70px;
@@ -9,5 +10,5 @@ ion-toolbar {
   --border-bottom-width: 1px;
   --border-bottom-left-radius: 30px;
   --border-bottom-right-radius: 30px;
-  --padding-bottom: env(safe-area-inset-bottom);
+  --padding-top: env(safe-area-inset-bottom);
 }
