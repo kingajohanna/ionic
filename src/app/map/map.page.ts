@@ -54,7 +54,10 @@ export class mapPage implements AfterViewInit, OnInit {
 
   constructor(private favoriteService: FavoriteServiceService) {
     this.subscription = this.favoriteService.currentFavoritesStops.subscribe(
-      (stops) => this.favoriteStops.next(stops)
+      (stops) => {
+        this.favoriteStops.next(stops);
+        this.redrawMarkers();
+      }
     );
   }
 
