@@ -12,5 +12,6 @@ export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() { }
-  
+
+  public iconColor: string = 'non-active-icon'
 }
