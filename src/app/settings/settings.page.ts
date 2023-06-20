@@ -13,7 +13,8 @@ import { CustomHeaderComponent } from '../custom-header/custom-header.component'
 export class settingsPage {
   constructor() { }
 
-  functionName() {
+  deleteFavs() {
+    console.log('delete Favorites was clicked')
     //here write your code navigate,event whatever you want
   }
 }
