@@ -5,7 +5,11 @@
     <p>{{ stop.times.join(", ") }}</p>
   </ion-label>
   <ion-button color="light" (click)="onClick()">
-    <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon> '
+    <ion-icon
+      slot="icon-only"
+      [name]="isFav ? 'heart' : 'heart-outline'"
+      color="danger"
+    ></ion-icon>
   </ion-button>
   <ion-button (click)="closePopover()">Close</ion-button>
 </ion-content>

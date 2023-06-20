@@ -235,7 +235,8 @@ export class mapPage implements AfterViewInit, OnInit {
       const popover = await this.popoverController.create({
         component: MarkerPopoverComponent,
         componentProps: {
-          stop: stop,
+          stop,
+          isFav,
         },
       });
       await popover.present();

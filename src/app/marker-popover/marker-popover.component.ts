@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { Stop } from '../../types/stop';
 import { CommonModule } from '@angular/common';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { FavoriteServiceService } from '../favorite-service.service';
 
 @Component({
   selector: 'app-marker-popover',
@@ -12,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MarkerPopoverComponent {
   @Input() stop: Stop;
+  @Input() isFav: boolean;
 
   constructor(private popoverController: PopoverController) {}
 
@@ -20,6 +23,6 @@ export class MarkerPopoverComponent {
   }
 
   onClick(): void {
-    console.log('szar');
+    console.log(this.isFav);
   }
 }
