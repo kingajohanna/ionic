@@ -13,7 +13,7 @@ ion-tab-bar {
   --padding-bottom: env(safe-area-inset-bottom);
 }
 
-ion-tab-button {
-  --color: var(--ion-color-green);
-  --color-selected: var(--ion-color-neon-green);
+.ion-icon-class {
+  --color: var(--ion-color-non-active-icon);
+  --color-selected: var(--ion-color-active-icon);
 }

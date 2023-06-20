@@ -1,13 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Settings </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-custom-header customTitle="Settings"></app-custom-header>
+
 
 <ion-content [fullscreen]="true">
+  <div class="delete-button">
+    <ion-button (click)="deleteFavs()" text-algin="center" color="danger">Delete all Favorites</ion-button>
+  </div>
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Settings</ion-title>
+
     </ion-toolbar>
   </ion-header>
 

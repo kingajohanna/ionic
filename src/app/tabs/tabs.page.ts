@@ -1,4 +1,4 @@
-import { Component, EnvironmentInjector, inject } from '@angular/core';
+import { Component, EnvironmentInjector, inject} from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -11,5 +11,7 @@ import { IonicModule } from '@ionic/angular';
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
-  constructor() {}
+  constructor() { }
+
+  public iconColor: string = 'non-active-icon'
 }

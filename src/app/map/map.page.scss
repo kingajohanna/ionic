@@ -14,11 +14,11 @@ ion-fab {
 }
 
 ion-fab-button {
-  --background: var(--ion-color-dark-green);
-  --background-activated: var(--ion-color-dark-green);
-  --background-hover: var(--ion-color-dark-green);
+  --background: var(--ion-color-stop-line-title);
+  --background-activated: var(--ion-color-stop-line-title);
+  --background-hover: var();
   --border-radius: 40px;
-  --color: var(--ion-color-neon-green);
+  --color: var(--ion-color-active-icon);
 }
 
 .marker {

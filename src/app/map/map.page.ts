@@ -3,17 +3,16 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
   OnInit,
-  ViewContainerRef,
 } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { Point } from '../../types/point';
 import { BehaviorSubject } from 'rxjs';
 import { busRoutes } from '../../data/lines';
 
-import { Stop } from '../../types/stop';
 import { Route } from '../../types/route';
 import { getRouteDirection } from '../../calculations/getRouteDirection';
 
@@ -27,7 +26,7 @@ const forteSpagnoloPos: Point = { longitude: 13.404768, latitude: 42.355627 };
   templateUrl: 'map.page.html',
   styleUrls: ['map.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent],
+  imports: [IonicModule, ExploreContainerComponent, CustomHeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class mapPage implements AfterViewInit, OnInit {

@@ -1,8 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Favorites </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-custom-header customTitle="Favorites"></app-custom-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -10,6 +7,15 @@
       <ion-title size="large">Favorites</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let stop of stops">
+      <ion-label>
+        <h2>{{ stop.name }}</h2>
+        <p>Times: {{ stop.times.join(', ') }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
   <app-explore-container name="Favorites"></app-explore-container>
 </ion-content>
+
