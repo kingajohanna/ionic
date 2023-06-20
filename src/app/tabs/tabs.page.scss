@@ -12,3 +12,8 @@ ion-tab-bar {
   --border-top-right-radius: 30px;
   --padding-bottom: env(safe-area-inset-bottom);
 }
+
+.ion-icon-class {
+  --color: var(--ion-color-non-active-icon);
+  --color-selected: var(--ion-color-active-icon);
+}
