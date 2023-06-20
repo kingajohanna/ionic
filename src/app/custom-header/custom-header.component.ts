@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -14,7 +14,7 @@ export class CustomHeaderComponent implements OnInit {
 
   constructor() { }
 
-  public title: string = ''
+  @Input() public customTitle: string = ''
 
   ngOnInit() {}
 
