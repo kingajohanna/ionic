@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 
 import { FavoriteServiceService } from '../favorite-service.service';
@@ -12,7 +11,7 @@ import { Stop } from '../../types/stop';
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent, CustomHeaderComponent],
+  imports: [IonicModule, CustomHeaderComponent],
 })
 export class settingsPage {
   subscription: Subscription;

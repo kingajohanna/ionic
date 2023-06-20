@@ -1,8 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import { BehaviorSubject } from 'rxjs';
 import { Stop } from '../../types/stop';
@@ -17,12 +15,7 @@ import { Subscription } from 'rxjs';
   templateUrl: 'favorites.page.html',
   styleUrls: ['favorites.page.scss'],
   standalone: true,
-  imports: [
-    IonicModule,
-    ExploreContainerComponent,
-    CustomHeaderComponent,
-    CommonModule,
-  ],
+  imports: [IonicModule, CustomHeaderComponent, CommonModule],
 })
 export class favoritesPage {
   subscription: Subscription;

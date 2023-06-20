@@ -16,8 +16,13 @@ export const getRouteDirection = async (startPoint: Point, endPoint: Point) => {
   const walkingRoute = await getCoords(startPoint, endPoint, Mode.WALKING);
 
   if (busline) {
-    const firstBusStop = busline?.stops[0].point;
-    const lastBusStop = busline?.stops[busline.stops.length - 1].point;
+    const firstBusStop = busline.stops[0].point;
+    const lastBusStop = busline.stops[busline.stops.length - 1].point;
+
+    const coords: [number, number][] = [];
+    busline.stops.forEach((stop) => {
+      coords.push([stop.point.longitude, stop.point.latitude]);
+    });
 
     const beforeBus = await getCoords(startPoint, firstBusStop!, Mode.WALKING);
     const onBus = await getCoords(firstBusStop!, lastBusStop!, Mode.DRIVING);
@@ -34,7 +39,7 @@ export const getRouteDirection = async (startPoint: Point, endPoint: Point) => {
       } as Route;
     return {
       beforeBus: beforeBus.geometry.coordinates,
-      onBus: onBus.geometry.coordinates,
+      onBus: coords,
       afterBus: afterBus.geometry.coordinates,
     } as Route;
   } else {
