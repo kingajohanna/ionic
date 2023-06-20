@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { InputChangeEventDetail, IonicModule } from '@ionic/angular';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
@@ -16,6 +16,9 @@ import { getRouteDirection } from '../../calculations/getRouteDirection';
 import { Stop } from '../../types/stop';
 import { FavoriteServiceService } from '../favorite-service.service';
 import { Subscription } from 'rxjs';
+import axios from 'axios';
+import { Place } from '../../types/place';
+import { CommonModule } from '@angular/common';
 
 const latitudeThreshold = 0.0003;
 const longitudeThreshold = 0.0003;
@@ -27,7 +30,7 @@ const forteSpagnoloPos: Point = { longitude: 13.404768, latitude: 42.355627 };
   templateUrl: 'map.page.html',
   styleUrls: ['map.page.scss'],
   standalone: true,
-  imports: [IonicModule, CustomHeaderComponent],
+  imports: [IonicModule, CustomHeaderComponent, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class mapPage implements AfterViewInit, OnInit {
@@ -36,12 +39,14 @@ export class mapPage implements AfterViewInit, OnInit {
   locationMarker: mapboxgl.Marker;
 
   location$ = new BehaviorSubject<Point>(forteSpagnoloPos);
-  destination$ = new BehaviorSubject(forteSpagnoloPos);
+  destination$ = new BehaviorSubject<Point>(forteSpagnoloPos);
   route$ = new BehaviorSubject({
     beforeBus: [],
     onBus: [],
     afterBus: [],
   } as Route);
+  searchAdresses$ = new BehaviorSubject<Place[]>([]);
+  selectedAddress$ = new BehaviorSubject<Place>({} as Place);
 
   subscription: Subscription;
   favoriteStops = new BehaviorSubject<Stop[]>([]);
@@ -93,8 +98,6 @@ export class mapPage implements AfterViewInit, OnInit {
     const self = this;
 
     this.map.on('click', async function (e) {
-      console.log('***target', e.target);
-
       if (
         Math.abs(self.destination$.value.latitude - e.lngLat.lat) >
           latitudeThreshold ||
@@ -110,12 +113,12 @@ export class mapPage implements AfterViewInit, OnInit {
           onBus: [],
           afterBus: [],
         } as Route);
+        self.selectedAddress$.next({} as Place);
       } else {
         const route = await getRouteDirection(
           self.location$.value,
           self.destination$.value
         );
-        console.log('plan', route);
 
         self.route$.next(route);
       }
@@ -130,19 +133,10 @@ export class mapPage implements AfterViewInit, OnInit {
     this.generateMarkers();
   }
 
-  flyToLocation() {
+  flyToLocation(location: Point) {
     this.map.flyTo({
-      center: [this.location$.value.longitude, this.location$.value.latitude],
+      center: [location.longitude, location.latitude],
       zoom: 15,
-    });
-  }
-
-  adjustCamera() {
-    this.map.easeTo({
-      pitch: 60,
-      bearing: 180,
-      duration: 1000,
-      easing: (t: number) => t,
     });
   }
 
@@ -195,7 +189,8 @@ export class mapPage implements AfterViewInit, OnInit {
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
       `<ion-label>
         <h2>${stop.name}</h2>
-        <p>Times: ${stop.times.join(', ')}</p>
+        <p>Times</p>
+        <p>${stop.times.join(', ')}</p>
       </ion-label>`
     );
 
@@ -210,5 +205,38 @@ export class mapPage implements AfterViewInit, OnInit {
       .setLngLat([stop.point.longitude, stop.point.latitude])
       .setPopup(popup)
       .addTo(this.map!);
+  }
+
+  async search(event: any) {
+    const value = event.detail.value || event.target.value || '';
+    if (value)
+      await axios
+        .get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${value}.json?proximity=ip&access_token=${environment.mapbox.accessToken}`
+        )
+        .then((res) => {
+          const extractedData = res.data.features.map((feature: any) => {
+            const { text, place_name, center } = feature;
+            return { text, place_name, center } as Place;
+          });
+
+          this.searchAdresses$.next(extractedData);
+        });
+  }
+
+  onSelect(address: Place) {
+    const point = {
+      longitude: address.center[0],
+      latitude: address.center[1],
+    };
+    this.selectedAddress$.next(address);
+    this.searchAdresses$.next([]);
+    this.destination$.next(point);
+    this.route$.next({
+      beforeBus: [],
+      onBus: [],
+      afterBus: [],
+    } as Route);
+    this.flyToLocation(point);
   }
 }

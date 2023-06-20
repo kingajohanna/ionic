@@ -5,6 +5,7 @@
 
 .map-container {
   position: relative;
+  z-index: 1;
 }
 
 ion-fab {
@@ -26,4 +27,14 @@ ion-fab-button {
   background-size: cover;
   width: 40px;
   height: 40px;
+}
+
+.search {
+  position: absolute;
+  top: 16px;
+  left: 25%;
+  right: 25%;
+  width: 50%;
+  background-color: transparent;
+  z-index: 2;
 }
