@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-label>
+    <h2>{{ stop.name }}</h2>
+    <p>Times</p>
+    <p>{{ stop.times.join(", ") }}</p>
+  </ion-label>
+  <ion-button color="light" (click)="onClick()">
+    <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon> '
+  </ion-button>
+  <ion-button (click)="closePopover()">Close</ion-button>
+</ion-content>

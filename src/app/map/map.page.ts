@@ -4,7 +4,11 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { InputChangeEventDetail, IonicModule } from '@ionic/angular';
+import {
+  InputChangeEventDetail,
+  IonicModule,
+  PopoverController,
+} from '@ionic/angular';
 import { CustomHeaderComponent } from '../custom-header/custom-header.component';
 import mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
@@ -19,6 +23,7 @@ import { Subscription } from 'rxjs';
 import axios from 'axios';
 import { Place } from '../../types/place';
 import { CommonModule } from '@angular/common';
+import { MarkerPopoverComponent } from '../marker-popover/marker-popover.component';
 
 const latitudeThreshold = 0.0003;
 const longitudeThreshold = 0.0003;
@@ -52,7 +57,10 @@ export class mapPage implements AfterViewInit, OnInit {
   favoriteStops = new BehaviorSubject<Stop[]>([]);
   markers: mapboxgl.Marker[] = [];
 
-  constructor(private favoriteService: FavoriteServiceService) {
+  constructor(
+    private favoriteService: FavoriteServiceService,
+    private popoverController: PopoverController
+  ) {
     this.subscription = this.favoriteService.currentFavoritesStops.subscribe(
       (stops) => {
         this.favoriteStops.next(stops);
@@ -221,18 +229,17 @@ export class mapPage implements AfterViewInit, OnInit {
 
     const marker = new mapboxgl.Marker(el)
       .setLngLat([stop.point.longitude, stop.point.latitude])
-      .setPopup(popup)
       .addTo(this.map!);
 
-    const buttonElement = document.getElementById('markerButton');
-
-    const self = this;
-
-    if (buttonElement) {
-      buttonElement.addEventListener('click', function () {
-        self.manageFav(stop); // Replace 'yourFunctionName' with the actual function you want to call
+    marker.getElement().addEventListener('click', async () => {
+      const popover = await this.popoverController.create({
+        component: MarkerPopoverComponent,
+        componentProps: {
+          stop: stop,
+        },
       });
-    }
+      await popover.present();
+    });
 
     this.markers.push(marker);
   }
