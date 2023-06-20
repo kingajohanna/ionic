@@ -11,5 +11,9 @@ import { CustomHeaderComponent } from '../custom-header/custom-header.component'
   imports: [IonicModule, ExploreContainerComponent, CustomHeaderComponent],
 })
 export class settingsPage {
-  constructor() {}
+  constructor() { }
+
+  functionName() {
+    //here write your code navigate,event whatever you want
+  }
 }
