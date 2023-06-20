@@ -187,7 +187,14 @@ export class mapPage implements AfterViewInit, OnInit {
         <h2>${stop.name}</h2>
         <p>Times</p>
         <p>${stop.times.join(', ')}</p>
-      </ion-label>`
+      </ion-label>
+      <ion-button color="white">
+        <ion-icon slot="icon-only" name="heart" color="danger"></ion-icon>
+      </ion-button>
+      <ion-button color="white">
+        <ion-icon slot="icon-only" name="heart" color="white"></ion-icon>
+      </ion-button>
+      `
     );
 
     var el = document.createElement('div');
