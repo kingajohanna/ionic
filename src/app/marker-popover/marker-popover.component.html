@@ -1,19 +1,22 @@
 <ion-card class="pop-up-cl">
-
   <ion-card-header>
     <ion-card-title>{{ stop.name }}</ion-card-title>
     <ion-card-subtitle>Times</ion-card-subtitle>
+    <ion-label *ngFor="let times of stop.times">
+      <p>{{ times }}</p>
+    </ion-label>
   </ion-card-header>
 
   <ion-content>
-    <ion-label>
-      <p>{{ stop.times.join(", ") }}</p>
-    </ion-label>
     <ion-button color="light" (click)="onClick()">
-      <ion-icon slot="icon-only"
-                [name]="isFav ? 'heart' : 'heart-outline'"
-                color="danger"></ion-icon>
+      <ion-icon
+        slot="icon-only"
+        [name]="isFav ? 'heart' : 'heart-outline'"
+        color="danger"
+      ></ion-icon>
     </ion-button>
-    <ion-button (click)="closePopover()" color="non-active-icon">Close</ion-button>
+    <ion-button (click)="closePopover()" color="non-active-icon"
+      >Close</ion-button
+    >
   </ion-content>
 </ion-card>
