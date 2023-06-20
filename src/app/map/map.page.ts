@@ -16,6 +16,9 @@ import { busRoutes } from '../../data/lines';
 import { Route } from '../../types/route';
 import { getRouteDirection } from '../../calculations/getRouteDirection';
 
+import { FavoriteServiceService } from "../favorite-service.service";
+import { Subscription } from 'rxjs'
+
 const latitudeThreshold = 0.0003;
 const longitudeThreshold = 0.0003;
 
@@ -37,7 +40,13 @@ export class mapPage implements AfterViewInit, OnInit {
   locationMarker: mapboxgl.Marker;
   route$: BehaviorSubject<Route>;
 
-  constructor() {}
+  message: string;
+  subscription: Subscription;
+
+  constructor(private favoriteService: FavoriteServiceService) {
+    this.subscription = this.favoriteService.currentMessage.subscribe(message => this.message = message)
+    console.log(this.message)
+}
 
   ngOnInit() {
     this.location$ = new BehaviorSubject(forteSpagnoloPos);
@@ -198,5 +207,9 @@ export class mapPage implements AfterViewInit, OnInit {
     el.style.backgroundSize = 'cover';
 
     new mapboxgl.Marker(el).setLngLat(point).addTo(this.map!);
+  }
+
+  ionViewDidEnter() {
+    console.log(this.message)
   }
 }
