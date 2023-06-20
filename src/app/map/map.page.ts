@@ -143,11 +143,7 @@ export class mapPage implements AfterViewInit, OnInit {
   generateMarkers(): void {
     busRoutes.map((route) =>
       route.stops.map((stop) => {
-        this.addMarker(
-          stop,
-
-          'url(../../assets/busStation.png)'
-        );
+        this.addMarker(stop, 'url(../../assets/busStation.png)');
       })
     );
   }
@@ -208,7 +204,7 @@ export class mapPage implements AfterViewInit, OnInit {
   }
 
   async search(event: any) {
-    const value = event.detail.value || event.target.value || '';
+    const value = event.detail.value || '';
     if (value)
       await axios
         .get(
