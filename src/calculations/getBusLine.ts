@@ -82,22 +82,3 @@ function calculateDistanceBetweenPoints(point1: Point, point2: Point) {
     return dist;
   }
 }
-
-function calculateDistanceBetweenBusStops(
-  stops: Stop[],
-  startIndex: number,
-  endIndex: number
-): number {
-  let distance = 0;
-
-  for (let i = startIndex; i < endIndex; i++) {
-    const currentStop = stops[i];
-    const nextStop = stops[i + 1];
-    distance += calculateDistanceBetweenPoints(
-      currentStop.point,
-      nextStop.point
-    );
-  }
-
-  return distance;
-}

@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { busRoutes } from '../data/lines';
 import { getBusLine } from './getBusLine';
 import { Route } from '../types/route';
+import { BusRoute } from '../types/busRoute';
+import { Stop } from '../types/stop';
 
 enum Mode {
   WALKING = 'walking',
@@ -19,18 +21,13 @@ export const getRouteDirection = async (startPoint: Point, endPoint: Point) => {
     const firstBusStop = busline.stops[0].point;
     const lastBusStop = busline.stops[busline.stops.length - 1].point;
 
-    const coords: [number, number][] = [];
-    busline.stops.forEach((stop) => {
-      coords.push([stop.point.longitude, stop.point.latitude]);
-    });
-
     const beforeBus = await getCoords(startPoint, firstBusStop!, Mode.WALKING);
-    const onBus = await getCoords(firstBusStop!, lastBusStop!, Mode.DRIVING);
+    const { onBusCoords, busTripTime } = await getBusRoute(busline);
     const afterBus = await getCoords(lastBusStop!, endPoint, Mode.WALKING);
 
     if (
       walkingRoute.duration <
-      beforeBus.duration + onBus.duration + afterBus.duration
+      beforeBus.duration + busTripTime + afterBus.duration
     )
       return {
         beforeBus: walkingRoute.geometry.coordinates,
@@ -39,7 +36,7 @@ export const getRouteDirection = async (startPoint: Point, endPoint: Point) => {
       } as Route;
     return {
       beforeBus: beforeBus.geometry.coordinates,
-      onBus: coords,
+      onBus: onBusCoords,
       afterBus: afterBus.geometry.coordinates,
     } as Route;
   } else {
@@ -49,6 +46,28 @@ export const getRouteDirection = async (startPoint: Point, endPoint: Point) => {
       afterBus: [],
     } as Route;
   }
+};
+
+const getBusRoute = async (busline: BusRoute) => {
+  let coords: [number, number][] = [];
+  let triptime = 0;
+
+  let previousStop: Stop | null = null;
+
+  for (const stop of busline.stops) {
+    if (previousStop) {
+      const onBus = await getCoords(
+        previousStop.point,
+        stop.point,
+        Mode.DRIVING
+      );
+      coords = [...coords, ...onBus.geometry.coordinates];
+      triptime += onBus.duration;
+    }
+    previousStop = stop;
+  }
+
+  return { onBusCoords: coords, busTripTime: triptime };
 };
 
 const getCoords = async (startPoint: Point, endPoint: Point, mode: string) => {
