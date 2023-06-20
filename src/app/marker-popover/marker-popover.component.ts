@@ -15,6 +15,12 @@ import { FavoriteServiceService } from '../favorite-service.service';
 export class MarkerPopoverComponent {
   @Input() stop: Stop;
   @Input() isFav: boolean;
+  @Input() onClickCallback: (
+    stop: Stop,
+    isFav: boolean,
+    favoriteService: FavoriteServiceService
+  ) => void;
+  @Input() favoriteService: FavoriteServiceService;
 
   constructor(private popoverController: PopoverController) {}
 
@@ -23,6 +29,7 @@ export class MarkerPopoverComponent {
   }
 
   onClick(): void {
-    console.log(this.isFav);
+    this.onClickCallback(this.stop, this.isFav, this.favoriteService);
+    this.popoverController.dismiss();
   }
 }

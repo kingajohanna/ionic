@@ -7,7 +7,7 @@ import { Stop } from '../types/stop';
   providedIn: 'root',
 })
 export class FavoriteServiceService {
-  private favoriteStops = new BehaviorSubject<Stop[]>(busRoutes[0].stops); // this does still not work because I am not sure about the types
+  private favoriteStops = new BehaviorSubject<Stop[]>([]); // this does still not work because I am not sure about the types
   currentFavoritesStops = this.favoriteStops.asObservable();
 
   constructor() {}
@@ -18,9 +18,6 @@ export class FavoriteServiceService {
 
   addOneStop(newFavoriteStop: Stop) {
     const temp = [...this.favoriteStops.value, newFavoriteStop]; //... operator is used for merging fields and values of objects, second object has precedence
-
-    console.log('add');
-
     this.favoriteStops.next(temp);
   }
 
@@ -39,8 +36,6 @@ export class FavoriteServiceService {
     const temp = this.favoriteStops.value.filter(
       (stop) => stop.name === stopFav.name
     );
-    console.log('**', temp.length);
-
     return temp.length;
   }
 }

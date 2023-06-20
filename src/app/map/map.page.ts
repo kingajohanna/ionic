@@ -192,33 +192,17 @@ export class mapPage implements AfterViewInit, OnInit {
     });
   }
 
-  manageFav(stop: Stop) {
-    console.log('szae');
-
-    const isFav = this.favoriteService.isFavorite(stop);
-
-    if (isFav) this.favoriteService.deleteOneStop(stop);
-    else this.favoriteService.addOneStop(stop);
-
-    this.redrawMarkers();
+  manageFav(
+    stop: Stop,
+    isFav: boolean,
+    favoriteService: FavoriteServiceService
+  ) {
+    if (isFav) favoriteService.deleteOneStop(stop);
+    else favoriteService.addOneStop(stop);
   }
 
   addMarker(stop: Stop, icon: string): void {
     const isFav = this.favoriteService.isFavorite(stop);
-
-    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`<ion-label>
-        <h2>${stop.name}</h2>
-        <p>Times</p>
-        <p>${stop.times.join(', ')}</p>
-      </ion-label>
-      <ion-button color="light" id="markerButton">
-        ${
-          isFav
-            ? '<ion-icon slot="icon-only" name="heart" color="danger"></ion-icon> '
-            : '<ion-icon slot="icon-only" name="heart-outline" color="danger"></ion-icon>'
-        }
-      </ion-button>
-      `);
 
     var el = document.createElement('div');
     el.className = 'marker';
@@ -237,6 +221,8 @@ export class mapPage implements AfterViewInit, OnInit {
         componentProps: {
           stop,
           isFav,
+          favoriteService: this.favoriteService,
+          onClickCallback: this.manageFav,
         },
       });
       await popover.present();
