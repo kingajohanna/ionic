@@ -27,19 +27,24 @@ export class favoritesPage {
 
   constructor(private favoriteService: FavoriteServiceService) {
     this.subscription = this.favoriteService.currentFavoritesStops.subscribe(
-      (stops) => this.favoriteStops.next(stops)
+      (stops) => {
+        if (stops.length == 0) this.favoriteStops.next([]);
+        else this.favoriteStops.next(stops);
+
+        let temp: any[] = [];
+        stops.map((f) => {
+          const info = getRouteAndDirection(f);
+
+          temp.push({
+            route: info?.route,
+            direction: info?.direction,
+            stop: f,
+          });
+
+          console.log(temp);
+          this.extendedInfo.next(temp);
+        });
+      }
     );
-
-    this.favoriteStops.subscribe((favs) => {
-      let temp: any[] = [];
-      favs.map((f) => {
-        const info = getRouteAndDirection(f);
-
-        temp.push({ route: info?.route, direction: info?.direction, stop: f });
-
-        console.log(temp);
-        this.extendedInfo.next(temp);
-      });
-    });
   }
 }

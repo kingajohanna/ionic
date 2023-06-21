@@ -1,7 +1,7 @@
 <app-custom-header customTitle="Favorites"></app-custom-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
+  <ion-list *ngIf="favoriteStops.value.length > 0">
     <ion-item *ngFor="let info of extendedInfo | async">
       <ion-label>
         <h2>{{info.route}} - {{ info.stop.name }}</h2>
