@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 
 import { FavoriteServiceService } from '../favorite-service.service';
 import { Subscription } from 'rxjs';
+import { getRouteAndDirection } from '../../calculations/getDirection';
 
 @Component({
   selector: 'app-favorites',
@@ -20,10 +21,25 @@ import { Subscription } from 'rxjs';
 export class favoritesPage {
   subscription: Subscription;
   favoriteStops = new BehaviorSubject<Stop[]>([]);
+  extendedInfo = new BehaviorSubject<
+    { route: string; direction: string; stop: Stop }[]
+  >([]);
 
   constructor(private favoriteService: FavoriteServiceService) {
     this.subscription = this.favoriteService.currentFavoritesStops.subscribe(
       (stops) => this.favoriteStops.next(stops)
     );
+
+    this.favoriteStops.subscribe((favs) => {
+      let temp: any[] = [];
+      favs.map((f) => {
+        const info = getRouteAndDirection(f);
+
+        temp.push({ route: info?.route, direction: info?.direction, stop: f });
+
+        console.log(temp);
+        this.extendedInfo.next(temp);
+      });
+    });
   }
 }

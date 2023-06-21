@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>App.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+				<key>dateExpires</key>
+				<string>2024. 02. 09.</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>Capacitor.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.5</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorApp.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.3</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorCamera.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorDevice.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorFilesystem.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorGeolocation.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorHaptics.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorKeyboard.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorPreferences.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CapacitorStatusBar.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.4</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>6781ADA1CB4AC57654A82935233AACE24805AFFC</string>
+						<key>dateExpires</key>
+						<string>2024. 02. 09.</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>Cordova.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>LFAL9L5B67</string>
+						<key>name</key>
+						<string>Zoosh Magyarorszag Kft.</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>5.0.5</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>LFAL9L5B67.io.ionic.starter</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>LFAL9L5B67</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>App.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>4ff56cbf-d6b9-414d-84b3-3ccbb66f14a2</string>
+				<key>dateExpires</key>
+				<string>2024. 03. 14.</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>LFAL9L5B67</string>
+				<key>name</key>
+				<string>Zoosh Magyarorszag Kft.</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

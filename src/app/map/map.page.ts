@@ -21,6 +21,7 @@ import axios from 'axios';
 import { Place } from '../../types/place';
 import { CommonModule } from '@angular/common';
 import { MarkerPopoverComponent } from '../marker-popover/marker-popover.component';
+import { getRouteAndDirection } from '../../calculations/getDirection';
 
 const latitudeThreshold = 0.0003;
 const longitudeThreshold = 0.0003;
@@ -133,6 +134,8 @@ export class mapPage implements AfterViewInit, OnInit {
         self.route$.next(route);
       }
     });
+
+    getRouteAndDirection(busRoutes[0].stops[0]);
   }
 
   getCurrentLocation = async () => {

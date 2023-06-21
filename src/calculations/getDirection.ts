@@ -2,21 +2,23 @@ import { busRoutes } from '../data/lines';
 import { BusRoute } from '../types/busRoute';
 import { Stop } from '../types/stop';
 
-export const getDirection = (busRoute: BusRoute) => {
-  const [lastStop] = busRoute.stops.slice(-1);
-  return lastStop.name;
-};
-
-export const getDirectionByStop = (busStop: Stop) => {
-  let direction = '';
-  busRoutes.map((route) => {
-    route.stops.every((stop) => {
-      if (stop === busStop) {
-        direction = getDirection(route);
-        return false;
-      }
-      return true;
-    });
+export const getRouteAndDirection = (stop: Stop) => {
+  const routeAndDirection = busRoutes.find((route) => {
+    return route.stops.filter(
+      (s) => s.name === stop.name && s.times[0] === stop.times[0]
+    );
   });
-  return direction;
+
+  console.log('***', routeAndDirection);
+
+  if (routeAndDirection) {
+    const lastStop =
+      routeAndDirection.stops[routeAndDirection.stops.length - 1];
+    return {
+      route: routeAndDirection.name,
+      direction: lastStop.name,
+    };
+  }
+
+  return null; // Return null if the route and direction are not found
 };
